@@ -1,4 +1,5 @@
 import Day from "../Day/Day";
+import TaskList from "../TaskList/TaskList";
 import TaskModal from "../TaskModal/TaskModal";
 
 import "./Calendar.scss";
@@ -6,11 +7,12 @@ import "./Calendar.scss";
 const Calendar = () => {
   const days = Array(30).fill(0);
   return (
-    <div className="calendar">
-      {days.map((_, index) => (
-        <Day key={index} index={index} />
-      ))}
-      <TaskModal />
+    <div>
+      <div className="calendar">
+        {days.map((_, index) => (
+          <Day key={index} index={index} />
+        ))}
+      </div>
       <button
         onClick={() =>
           (
@@ -20,6 +22,10 @@ const Calendar = () => {
       >
         Open Modal
       </button>
+      <TaskModal />
+      <div className="visible-mobile mobile-task-list">
+        <TaskList />
+      </div>
     </div>
   );
 };

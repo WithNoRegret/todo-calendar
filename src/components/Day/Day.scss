@@ -1,15 +1,18 @@
 .day {
-    height: 150px;
-    width: 150px;
+    aspect-ratio: 1;
 
-    padding: 20px;
+    padding: 5px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     border: 1px solid #ccc;
-    border-radius: 10px;
 
     cursor: pointer;
+
+
+    @media screen and (max-width: 440px) {
+        aspect-ratio: unset;
+    }
   }

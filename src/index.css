@@ -60,3 +60,9 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+@media (min-width: 991px) {
+  .visible-mobile {
+    display: none;
+  }
+}

@@ -4,6 +4,7 @@ import "./TaskList.scss";
 const TaskList = () => {
   return (
     <div className="task-list">
+      <button>Create new Task</button>
       <Task />
       <Task />
       <Task />
