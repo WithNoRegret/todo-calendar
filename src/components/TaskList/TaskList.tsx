@@ -3,13 +3,25 @@ import "./TaskList.scss";
 
 const TaskList = () => {
   return (
-    <div className="task-list">
-      <button>Create new Task</button>
-      <Task />
-      <Task />
-      <Task />
-      <Task />
-      <Task />
+    <div className="task-list-wrapper">
+      <button className="create-task">Create new Task</button>
+      <ul className="task-list">
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+      </ul>
     </div>
   );
 };

@@ -1,0 +1,12 @@
+.new-task-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    gap: 10px;
+}
+
+.new-task-form__input#task {
+    resize: none;
+    height: 100px;
+}
