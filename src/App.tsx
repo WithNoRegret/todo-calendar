@@ -1,9 +1,11 @@
 import Calendar from "./components/Calendar/Calendar";
-
+import "./App.scss";
 function App() {
   return (
     <div className="app">
-      <h1>Calendar App</h1>
+      <header className="app-header">
+        <h1 className="app-title">Calendar app</h1>
+      </header>
       <Calendar />
     </div>
   );

@@ -1,0 +1,15 @@
+.day {
+    height: 150px;
+    width: 150px;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+    cursor: pointer;
+  }

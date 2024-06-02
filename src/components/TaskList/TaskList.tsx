@@ -1,9 +1,9 @@
 import Task from "../Task/Task";
+import "./TaskList.scss";
 
 const TaskList = () => {
   return (
-    <div>
-      <h1>TaskList</h1>
+    <div className="task-list">
       <Task />
       <Task />
       <Task />
