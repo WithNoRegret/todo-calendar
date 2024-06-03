@@ -1,15 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Calendar from "./components/Calendar/Calendar";
 import MainHeader from "./components/MainHeader/MainHeader";
 import TaskList from "./components/TaskList/TaskList";
 import "./App.scss";
 import TaskModal from "./components/TaskModal/TaskModal";
+import { useMobile } from "./helpers/hooks/useMobile";
 function App() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 991);
+  const { mobile, setMobile } = useMobile();
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 991);
+      setMobile(window.innerWidth <= 991 ? "mobile" : "desktop");
     };
     window.addEventListener("resize", handleResize);
   }, []);
@@ -18,7 +19,7 @@ function App() {
     <div className="app">
       <MainHeader />
       <Calendar />
-      {isMobile && <TaskList mobile />}
+      {mobile === "mobile" && <TaskList mobile />}
       <TaskModal />
     </div>
   );

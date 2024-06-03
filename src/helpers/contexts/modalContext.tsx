@@ -1,14 +1,5 @@
 import { createContext, useState, ReactNode } from "react";
-
-type ModalType = "list" | "task";
-
-interface ModalContextValues {
-  isModalOpen: boolean;
-  modalType: ModalType;
-  openModal: (type?: ModalType) => void;
-  closeModal: () => void;
-  setModal: (type: ModalType) => void;
-}
+import { ModalType, ModalContextValues } from "../interfaces";
 
 interface ModalContextProps {
   children: ReactNode;

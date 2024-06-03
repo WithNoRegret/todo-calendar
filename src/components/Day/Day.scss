@@ -13,4 +13,12 @@
     @media screen and (max-width: 440px) {
         aspect-ratio: unset;
     }
+
+    &--today {
+        background-color: #92afeb;
+    }
+
+    &:hover {
+        border: 1px solid #92afeb;
+    }
   }
