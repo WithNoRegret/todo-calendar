@@ -27,6 +27,7 @@ const NewTaskForm = () => {
     const taskInput = form.elements.namedItem("task") as HTMLInputElement;
     const taskValue = taskInput.value;
     addTask({ id: uuidv4(), body: taskValue, status: false }, date);
+    taskInput.value = "";
     if (mobile === "mobile") {
       closeModal();
     } else {
