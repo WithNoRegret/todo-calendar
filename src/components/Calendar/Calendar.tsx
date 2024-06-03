@@ -17,11 +17,7 @@ const Calendar = () => {
   }, [month, year]);
   return (
     <div className="calendar">
-      <header
-        className={`calendar__header ${
-          mobile === "mobile" ? "calendar__header--mobile" : ""
-        }`}
-      >
+      <header className="calendar__header">
         {mobile === "desktop" && (
           <button
             className="calendar__button"
@@ -31,9 +27,9 @@ const Calendar = () => {
           </button>
         )}
         {month && year && (
-          <h1 className="calendar__title">
+          <h2 className="calendar__title">
             {monthNames[month - 1]} {year}
-          </h1>
+          </h2>
         )}
         {mobile === "desktop" && (
           <button

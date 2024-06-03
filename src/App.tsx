@@ -5,6 +5,7 @@ import TaskList from "./components/TaskList/TaskList";
 import "./App.scss";
 import TaskModal from "./components/TaskModal/TaskModal";
 import { useMobile } from "./helpers/contexts/mobileContext/useMobile";
+
 function App() {
   const { mobile, setMobile } = useMobile();
 

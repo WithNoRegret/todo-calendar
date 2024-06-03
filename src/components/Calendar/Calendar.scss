@@ -3,19 +3,27 @@
     flex-direction: column;
     height: 100%;
     padding: 30px;
+    
+    @media (max-width: 991px) {
+        padding: 5px;
+    }
 
     &__header {
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        &--mobile {
+        @media (max-width: 991px) {
             justify-content: center;
         }
     }
 
     &__title {
         padding-block: 10px;
+
+        @media (max-width: 991px) {
+            font-size: 22px;
+        }
     }
 
     &__body {

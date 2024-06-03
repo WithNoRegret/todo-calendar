@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import { useDate } from "../../helpers/contexts/dateContext/useDate";
 import { useModal } from "../../helpers/contexts/modalContext/useModal";
 import "./NewTaskForm.scss";
 import { useMobile } from "../../helpers/contexts/mobileContext/useMobile";
-
+import { useTaskStorage } from "../../helpers/contexts/taskStorageContext/useTaskStorage";
 const NewTaskForm = () => {
   const { day, month, year } = useDate();
   const { setModal, closeModal } = useModal();
   const { mobile } = useMobile();
+  const { addTask } = useTaskStorage();
 
   const [date, setDate] = useState("");
 
@@ -21,7 +23,10 @@ const NewTaskForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("sent");
+    const form = e.currentTarget as HTMLFormElement;
+    const taskInput = form.elements.namedItem("task") as HTMLInputElement;
+    const taskValue = taskInput.value;
+    addTask({ id: uuidv4(), body: taskValue, status: false }, date);
     if (mobile === "mobile") {
       closeModal();
     } else {
@@ -31,7 +36,7 @@ const NewTaskForm = () => {
 
   return (
     <form className="new-task-form" onSubmit={handleSubmit}>
-      <h1>Create new task</h1>
+      <h2>Create new task</h2>
       <textarea
         name="task"
         className="new-task-form__input"

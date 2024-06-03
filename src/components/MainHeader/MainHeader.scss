@@ -9,6 +9,11 @@
 
     @media (max-width: 991px) {
         padding-block: 10px;
-        font-size: 16px;
+    }
+
+    &__title {
+        @media (max-width: 991px) {
+            font-size: 28px;
+        }
     }
 }

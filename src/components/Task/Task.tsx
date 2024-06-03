@@ -1,12 +1,21 @@
 import "./Task.scss";
 
-const Task = () => {
+interface TaskProps {
+  id: number;
+  body: string;
+  status: boolean;
+}
+
+const Task = ({ id, body, status }: TaskProps) => {
   return (
     <div className="task">
-      Task
+      <p>
+        {id} {body}
+      </p>
       <div className="task__buttons">
-        <label htmlFor="task">done</label>
-        <input type="checkbox" id="task" />
+        <div
+          className={`task__status ${status ? "task__status--done" : ""}`}
+        ></div>
         <button>Delete</button>
       </div>
     </div>
