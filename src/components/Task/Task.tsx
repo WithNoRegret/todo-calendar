@@ -1,7 +1,7 @@
 import "./Task.scss";
 
 interface TaskProps {
-  id: number;
+  id: string;
   body: string;
   status: boolean;
 }
