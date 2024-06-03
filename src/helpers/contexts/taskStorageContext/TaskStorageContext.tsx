@@ -21,7 +21,7 @@ export const TaskStorageProvider = ({ children }: TaskStorageContextProps) => {
     });
   };
 
-  const deleteTask = (id: number) => {
+  const deleteTask = (id: string) => {
     setTasks((prevTasks) => {
       const updatedTasks = prevTasks.filter((task) => task.task.id !== id);
       localStorage.setItem("tasks", JSON.stringify(updatedTasks));
@@ -29,8 +29,23 @@ export const TaskStorageProvider = ({ children }: TaskStorageContextProps) => {
     });
   };
 
+  const SetTaskStatus = (id: string, status: boolean) => {
+    setTasks((prevTasks) => {
+      const updatedTasks = prevTasks.map((task) => {
+        if (task.task.id === id) {
+          return { ...task, task: { ...task.task, status } };
+        }
+        return task;
+      });
+      localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+      return updatedTasks;
+    });
+  };
+
   return (
-    <TaskStorageContext.Provider value={{ tasks, addTask, deleteTask }}>
+    <TaskStorageContext.Provider
+      value={{ tasks, addTask, deleteTask, SetTaskStatus }}
+    >
       {children}
     </TaskStorageContext.Provider>
   );

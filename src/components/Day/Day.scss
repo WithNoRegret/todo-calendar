@@ -2,8 +2,11 @@
     padding: 5px;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+
+    overflow: hidden;
 
     border: 1px solid #ccc;
 
@@ -20,5 +23,16 @@
 
     &:hover {
         border: 1px solid #92afeb;
+    }
+
+    &__task {
+        width: 100%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        &--true {
+            background-color: lightgreen;
+        }
     }
   }

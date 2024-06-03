@@ -5,6 +5,7 @@ import { useModal } from "../../helpers/contexts/modalContext/useModal";
 import "./NewTaskForm.scss";
 import { useMobile } from "../../helpers/contexts/mobileContext/useMobile";
 import { useTaskStorage } from "../../helpers/contexts/taskStorageContext/useTaskStorage";
+import { formatDate } from "../../helpers/functions/formatDate";
 const NewTaskForm = () => {
   const { day, month, year } = useDate();
   const { setModal, closeModal } = useModal();
@@ -15,9 +16,8 @@ const NewTaskForm = () => {
 
   useEffect(() => {
     if (day && month && year) {
-      const formattedMonth = month.toString().padStart(2, "0");
-      const formattedDay = day.toString().padStart(2, "0");
-      setDate(`${year}-${formattedMonth}-${formattedDay}`);
+      const formattedDate = formatDate(year, month, day);
+      setDate(formattedDate);
     }
   }, [day, month, year]);
 
@@ -42,6 +42,7 @@ const NewTaskForm = () => {
         className="new-task-form__input"
         id="task"
         placeholder="Enter your task..."
+        maxLength={200}
         required
       ></textarea>
       <div className="new-task-form__input">
