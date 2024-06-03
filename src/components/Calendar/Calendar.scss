@@ -34,7 +34,7 @@
         width: 100%;
         margin-inline: auto;
         grid-template-columns: repeat(7, 1fr);
-        grid-auto-rows: 20%;
+        grid-auto-rows: 14%;
     }
 
     &__button {
@@ -50,6 +50,24 @@
         
         &:hover {
             border: 1px solid #92afeb;
+        }
+    }
+
+    &__day-name {
+        padding: 20px;
+        font-weight: bold;
+        height: 20%;
+
+        align-self: flex-end;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: #333;
+        color: #ccc;
+
+        @media (max-width: 991px) {
+            padding: 15px;
         }
     }
 }

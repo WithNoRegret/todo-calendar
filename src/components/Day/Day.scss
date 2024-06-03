@@ -21,6 +21,10 @@
         background-color: #92afeb;
     }
 
+    &--off {
+        background-color: rgb(235, 185, 185);
+    }
+
     &:hover {
         border: 1px solid #92afeb;
     }
