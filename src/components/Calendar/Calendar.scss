@@ -1,12 +1,47 @@
 .calendar {
-    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     padding: 30px;
 
-    display: grid;
-    max-width: 1200px;
-    width: 100%;
-    margin-inline: auto;
-    grid-template-columns: repeat(7, 1fr);
-    grid-auto-rows: 20%;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
+        &--mobile {
+            justify-content: center;
+        }
+    }
+
+    &__title {
+        padding-block: 10px;
+    }
+
+    &__body {
+        flex-grow: 1;
+    
+        display: grid;
+        max-width: 1200px;
+        width: 100%;
+        margin-inline: auto;
+        grid-template-columns: repeat(7, 1fr);
+        grid-auto-rows: 20%;
+    }
+
+    &__button {
+        padding: 15px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid #ccc;
+
+        cursor: pointer;
+        
+        &:hover {
+            border: 1px solid #92afeb;
+        }
+    }
 }

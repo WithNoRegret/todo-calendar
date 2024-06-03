@@ -2,6 +2,7 @@ import { useDate } from "../../helpers/contexts/dateContext/useDate";
 import { useMobile } from "../../helpers/contexts/mobileContext/useMobile";
 import { useModal } from "../../helpers/contexts/modalContext/useModal";
 import Task from "../Task/Task";
+import { monthNames } from "../../helpers/constants/monthNames";
 import "./TaskList.scss";
 
 const TaskList = () => {
@@ -14,7 +15,7 @@ const TaskList = () => {
       className={`task-list ${mobile === "mobile" ? "task-list--mobile" : ""}`}
     >
       <header className="task-list__header">
-        <h1>{`Tasks for ${day}.${month}.${year}`}</h1>
+        <h1>{`Tasks for ${month && monthNames[month - 1]} ${day} ${year}`}</h1>
       </header>
       <div className="task-list__body">
         <button

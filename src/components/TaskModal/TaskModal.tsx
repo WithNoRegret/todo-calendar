@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import TaskList from "../TaskList/TaskList";
 import NewTaskForm from "../NewTaskForm/NewTaskForm";
 import { useModal } from "../../helpers/contexts/modalContext/useModal";
-import { useDate } from "../../helpers/contexts/dateContext/useDate";
 import { useMobile } from "../../helpers/contexts/mobileContext/useMobile";
 import "./TaskModal.scss";
 
@@ -10,7 +9,6 @@ const TaskModal = () => {
   const { isModalOpen, closeModal, modalType } = useModal();
   const { mobile } = useMobile();
   const dialogRef = useRef<HTMLDialogElement | null>(null);
-  const { day, month, year } = useDate();
 
   useEffect(() => {
     const dialog = dialogRef.current;

@@ -5,24 +5,27 @@ import { useModal } from "../../helpers/contexts/modalContext/useModal";
 import "./Day.scss";
 
 interface dayProps {
-  date: number;
+  day: number;
 }
 
-const Day = ({ date }: dayProps) => {
+const Day = ({ day }: dayProps) => {
   const { openModal } = useModal();
   const { mobile } = useMobile();
-  const { currentDay, setDay } = useDate();
+  const { currentDay, currentMonth, currentYear, month, year, setDay } =
+    useDate();
 
   const [today, setToday] = useState(false);
 
   useEffect(() => {
-    if (currentDay === date) {
+    if (currentDay === day && currentMonth === month && currentYear === year) {
       setToday(true);
+    } else {
+      setToday(false);
     }
-  }, [currentDay, date]);
+  }, [currentDay, currentMonth, currentYear, day, month, year]);
 
   const handleModal = () => {
-    setDay(date);
+    setDay(day);
     if (mobile === "desktop") {
       openModal("list");
     }
@@ -30,7 +33,7 @@ const Day = ({ date }: dayProps) => {
 
   return (
     <div className={`day ${today ? "day--today" : ""}`} onClick={handleModal}>
-      {date}
+      {day}
     </div>
   );
 };

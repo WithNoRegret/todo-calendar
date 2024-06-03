@@ -9,4 +9,6 @@ export interface dateContextValues {
     setDay: (day: number) => void;
     setMonth: (month: number) => void;
     setYear: (year: number) => void;
+    increaseMonth: () => void;
+    decreaseMonth: () => void;
 }

@@ -1,5 +1,5 @@
 import { ReactNode, createContext, useState } from "react";
-import { dateContextValues } from "../modalContext/interfaces";
+import { dateContextValues } from "./interfaces";
 
 interface dateContextProps {
   children: ReactNode;
@@ -20,6 +20,22 @@ export const DateProvider = ({ children }: dateContextProps) => {
     setMonth(date.getMonth() + 1);
     setDay(date.getDate());
   };
+  const increaseMonth = () => {
+    if (month === 12) {
+      setMonth(1);
+      year && setYear(year + 1);
+    } else {
+      month && setMonth(month + 1);
+    }
+  };
+  const decreaseMonth = () => {
+    if (month === 1) {
+      setMonth(12);
+      year && setYear(year - 1);
+    } else {
+      month && setMonth(month - 1);
+    }
+  };
   return (
     <DateContext.Provider
       value={{
@@ -33,6 +49,8 @@ export const DateProvider = ({ children }: dateContextProps) => {
         setDay,
         setMonth,
         setYear,
+        increaseMonth,
+        decreaseMonth,
       }}
     >
       {children}
