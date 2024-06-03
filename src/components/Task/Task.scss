@@ -4,10 +4,10 @@
 
     display: flex;
     justify-content: space-between;
-}
 
-.buttons {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    &__buttons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
 }
