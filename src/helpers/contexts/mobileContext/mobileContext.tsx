@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { MobileType, MobileContextValues } from "../interfaces";
+import { MobileType, MobileContextValues } from "./interfaces";
 
 interface MobileContextProps {
   children: React.ReactNode;

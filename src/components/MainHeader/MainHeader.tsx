@@ -1,4 +1,4 @@
-import { useDate } from "../../helpers/hooks/useDate";
+import { useDate } from "../../helpers/contexts/dateContext/useDate";
 import "./MainHeader.scss";
 
 const MainHeader = () => {

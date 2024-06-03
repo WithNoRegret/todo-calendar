@@ -1,23 +1,28 @@
 import { useEffect, useState } from "react";
-import { useDate } from "../../helpers/hooks/useDate";
-import { useMobile } from "../../helpers/hooks/useMobile";
-import { useModal } from "../../helpers/hooks/useModal";
+import { useDate } from "../../helpers/contexts/dateContext/useDate";
+import { useMobile } from "../../helpers/contexts/mobileContext/useMobile";
+import { useModal } from "../../helpers/contexts/modalContext/useModal";
 import "./Day.scss";
 
-const Day = ({ index }: { index: number }) => {
+interface dayProps {
+  date: number;
+}
+
+const Day = ({ date }: dayProps) => {
   const { openModal } = useModal();
   const { mobile } = useMobile();
-  const { day } = useDate();
+  const { currentDay, setDay } = useDate();
 
   const [today, setToday] = useState(false);
 
   useEffect(() => {
-    if (day === index) {
+    if (currentDay === date) {
       setToday(true);
     }
-  }, [day, index]);
+  }, [currentDay, date]);
 
   const handleModal = () => {
+    setDay(date);
     if (mobile === "desktop") {
       openModal("list");
     }
@@ -25,7 +30,7 @@ const Day = ({ index }: { index: number }) => {
 
   return (
     <div className={`day ${today ? "day--today" : ""}`} onClick={handleModal}>
-      {index}
+      {date}
     </div>
   );
 };

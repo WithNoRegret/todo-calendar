@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { DateContext } from "../contexts/dateContext";
-import { dateContextValues } from "../interfaces";
+import { DateContext } from "./dateContext";
+import { dateContextValues } from "./interfaces";
 
 export const useDate = (): dateContextValues => {
     const context = useContext(DateContext);

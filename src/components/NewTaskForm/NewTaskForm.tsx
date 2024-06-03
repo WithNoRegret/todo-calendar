@@ -16,8 +16,10 @@ const NewTaskForm = () => {
         id="task"
         placeholder="Enter your task..."
       ></textarea>
-      <label htmlFor="date">Choose Date:</label>
-      <input type="date" id="date" name="date" />
+      <div className="new-task-form__input">
+        <label htmlFor="date">Choose Date:</label>
+        <input type="date" id="date" name="date" />
+      </div>
       <button type="submit">Add</button>
     </form>
   );

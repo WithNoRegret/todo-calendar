@@ -6,6 +6,9 @@
     gap: 10px;
 
     &__input {
+        display: flex;
+        gap: 10px;
+        
         &#task {
             resize: none;
             height: 100px;

@@ -1,12 +1,14 @@
 import { useEffect, useRef } from "react";
 import TaskList from "../TaskList/TaskList";
 import NewTaskForm from "../NewTaskForm/NewTaskForm";
-import { useModal } from "../../helpers/hooks/useModal";
-import { useDate } from "../../helpers/hooks/useDate";
+import { useModal } from "../../helpers/contexts/modalContext/useModal";
+import { useDate } from "../../helpers/contexts/dateContext/useDate";
+import { useMobile } from "../../helpers/contexts/mobileContext/useMobile";
 import "./TaskModal.scss";
 
 const TaskModal = () => {
   const { isModalOpen, closeModal, modalType } = useModal();
+  const { mobile } = useMobile();
   const dialogRef = useRef<HTMLDialogElement | null>(null);
   const { day, month, year } = useDate();
 
@@ -20,10 +22,15 @@ const TaskModal = () => {
   }, [isModalOpen]);
 
   return (
-    <dialog id="task-modal" className="task-modal" ref={dialogRef}>
+    <dialog
+      id="task-modal"
+      className={`task-modal ${
+        mobile === "mobile" ? "task-modal--mobile" : ""
+      }`}
+      ref={dialogRef}
+    >
       <div className="task-modal__inner">
         <header className="task-modal__header">
-          <h1>{`Tasks for ${day}.${month}.${year}`}</h1>
           <button
             className="task-modal__close-button"
             onClick={() => closeModal()}

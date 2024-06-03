@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { MobileContext } from "../contexts/mobileContext";
-import { MobileContextValues } from "../interfaces";
+import { MobileContext } from "./mobileContext";
+import { MobileContextValues } from "./interfaces";
 
 export const useMobile = (): MobileContextValues => {
     const context = useContext(MobileContext);

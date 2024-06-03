@@ -1,5 +1,5 @@
 import { createContext, useState, ReactNode } from "react";
-import { ModalType, ModalContextValues } from "../interfaces";
+import { ModalType, ModalContextValues } from "./interfaces";
 
 interface ModalContextProps {
   children: ReactNode;

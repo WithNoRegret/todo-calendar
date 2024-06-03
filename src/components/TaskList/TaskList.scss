@@ -10,6 +10,18 @@
         max-height: 60%;
     }
 
+    &__header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+    }
+
+    &__body {
+        overflow-y: auto;
+        flex: 1;
+    }
+
     &__create-button {
         position: sticky;
         top: 0;

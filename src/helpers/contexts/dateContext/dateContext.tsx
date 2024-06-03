@@ -1,5 +1,5 @@
 import { ReactNode, createContext, useState } from "react";
-import { dateContextValues } from "../interfaces";
+import { dateContextValues } from "../modalContext/interfaces";
 
 interface dateContextProps {
   children: ReactNode;
